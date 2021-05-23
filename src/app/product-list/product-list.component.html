@@ -1,0 +1,51 @@
+<br><br><br>
+
+<button (click)= "dashboard()" class="btn btn-danger" style="margin-top: 10px;">Dashboard</button>
+
+
+<h1>Product List</h1><br>
+
+<!-- <input type = "text" placeholder = "Search" [(ngModel)] = "search" /> -->
+
+<table class="table table-striped table-bordered">
+
+<thead>
+<tr>
+    <th>Id</th>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Qunatity Available</th>
+    <th>price</th>
+    <th>discount</th>
+    <th>priceWithDiscount</th>
+    <th>MgfDate</th>
+    <th>Description</th>
+    <th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+    <tr *ngFor="let pr of products; let index=index">
+        <td>{{index+1}}</td>
+        <td>
+            <img class="thumbnail" src ="../../assets/uploads/{{pr.image}}" alt="" width="120" height="100" />
+        </td>
+        <td>{{pr.name}}</td>
+        <td>{{pr.categoryId}}</td>
+        <td>{{pr.QuantityAvailable}}</td>
+        <td>{{pr.price}}</td>
+        <td>{{pr.discount}}</td>
+        <td>{{pr.priceWithDiscount}}</td>
+        <td>{{pr.mgfdate}}</td>
+        <td>{{pr.description}}</td>
+        <td ><button (click)="ondelete(pr.productId)" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i></button>
+        <button (click)="onSelect(pr.productId)" class="btn btn-warning" style="margin-left: 10px;"> <i class="glyphicon glyphicon-pencil"></i></button></td>
+    </tr>
+
+
+</tbody>
+
+
+</table>
+<button (click)= "onAddProduct()" class="btn btn-primary">Add Product</button> <br><br>

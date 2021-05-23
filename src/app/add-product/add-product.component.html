@@ -1,0 +1,122 @@
+<br><br><br>
+
+<h1>Add Product</h1>
+
+
+<div class="col-md-3"></div>
+
+
+<div class="row">
+
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Name</label>
+      <input [(ngModel)]="name" type="text" class="form-control">
+    </div>
+  </div>
+
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Price</label>
+      <input [(ngModel)]="price" type="text" class="form-control">
+    </div>
+  </div>
+
+</div>
+
+<div class="col-md-3"></div>
+
+<div class="row">
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Discount</label>
+      <input [(ngModel)]="discount" type="text" class="form-control">
+    </div>
+  </div>
+
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Price with Discount</label>
+      <input [(ngModel)]="priceWithDiscount" type="text" class="form-control">
+
+    </div>
+  </div>
+
+</div>
+
+<div class="col-md-3"></div>
+
+<div class="row">
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Quantity Available</label>
+      <input [(ngModel)]="QuantityAvailable" type="text" class="form-control">
+    </div>
+  </div>
+
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Add Image</label>
+      <input (change)="onSelectImage($event)" type="file" class="form-control">
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="col-md-3"></div>
+<div class="row">
+  <div class="col-md-3">
+
+    <div class="form-group">
+      <label for="">Category</label>
+      <select [(ngModel)]="categoryId" class="form-control">
+        <option value="">Choose a Category</option>
+        <option *ngFor="let c of cat" [ngValue]="c.id">{{c.title}}</option>
+      </select>
+    </div>
+
+    
+
+  </div>
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">MGF Date</label>
+      <input [(ngModel)]="mgfdate" type="date" class="form-control">
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<div class="col-md-3"></div>
+<div class="row">
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="">Description</label>
+      <textarea [(ngModel)]="description" class="form-control" rows="4"></textarea>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="col-md-3"></div>
+
+<div class="row">
+  <div class="col-md-3">
+    <button (click)="addProduct()" class="btn btn-success">Add</button>
+    <a style="margin-left: 10px;" routerLink="/adminlogin/dashboard/product" class="btn btn-danger">Cancel</a>
+  </div>
+</div>

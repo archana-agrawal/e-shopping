@@ -1,0 +1,40 @@
+<br><br><br>
+<button (click)= "dashboard()" class="btn btn-default" style="margin-top: 10px;">Dashboard</button>
+
+<h1>List of User's</h1>
+
+<table class="table table-striped table-bordered">
+
+<thead>
+<tr>
+    <th>Id</th>
+    <th>Username</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>PhoneNo</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+    <tr *ngFor="let user of users;let index = index">
+        <td>{{index+1}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.firstname}}</td>
+        <td>{{user.lastname}}</td>
+        <td>{{user.phoneno}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <!-- <button (click)="onUserSelect(user.id)" class = "btn btn-warning" style="margin-left: 10px;"><i class="glyphicon glyphicon-pencil"></i></button> -->
+        <button class = "btn btn-info" style="margin-top: 5px;margin-left: 10px;; margin-right: 10px;"> <a href="/login/dashboard/orders/{{user.id}}"> ShowOrders </a> </button>
+        <button  class = "btn btn-info" style="margin-top: 5px;">Track Location </button>
+    <!-- </td> -->
+    </tr>
+
+
+</tbody>
+
+
+</table>

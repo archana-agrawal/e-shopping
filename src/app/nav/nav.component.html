@@ -1,0 +1,96 @@
+<div class="myclass">
+
+  <nav id="myid" class="navbar navbar-dark bg-primary navbar-fixed-top" style="background-color: #239bf1;height: 60px;">
+
+    <form id="page" class="form-inline">
+
+      <div> <a style="margin-left: 20px;margin-top:3px;font-size: medium" class="navbar-brand">Shopping Site</a> </div>
+
+
+      <div style="margin-left: 200px;margin-right: 10px;">
+        <ul class="nav navbar-nav">
+          <li>
+            <a class="hello" routerLink="/home" href="">Home</a>
+          </li>
+
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Category
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Category 1</a>
+                <a href="#">Category 2</a>
+                <a href="#">Category 3</a>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">More
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Contact Us</a>
+                <a href="#">Give Feedback</a>
+                <a href="#">Help Desk</a>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a routerLink="/login/cart" class="hello">
+              <i class="fa" style="font-size:22px">&#xf07a;</i>
+              <span class='badge badge-warning' id='lblCartCount'>{{count}}</span>
+              Cart
+            </a>
+          </li>
+
+          <li>
+            <div>
+              <input [(ngModel)]="name" name="Search" size="40" style="margin-top: 11px;" class="form-control"
+                type="text" placeholder="Search for product" aria-label="search" (ngModelChange)="Search($event)">
+              <!-- <button (click)="Search()" style="margin-top: 11px; margin-left: 5px;" class="btn btn-info" type="submit">
+                <a href="/login/search">
+                  Search </a> </button> -->
+            </div>
+          </li>
+
+          <li>
+
+            <div *ngIf="!isLoggedIn" size="60" style="margin-top: 15px; margin-left: 280px;">
+          <li><a routerLink="/login" class="hello">Login</a>
+            <img src="../../assets/uploads/avtar.png" alt="" idth="32" height="32" class="rounded-circle">
+          </li>
+      </div>
+
+      <div *ngIf="isLoggedIn" class="dropdown" style="margin-left: 280px;">
+        <button class="dropbtn">{{username}}
+          <img src="../../assets/uploads/{{image}}" alt="mdo" width="32" height="32" class="rounded-circle">
+          <!-- <i class="fa fa-caret-down"></i> -->
+        </button>
+        <div class="dropdown-content">
+          <a routerLink="/login/myprofile/{{id}}" href="#">My Profile</a>
+          <a routerLink="/login/myOrder/{{id}}">My Orders</a>
+          <a href="#">Settings</a>
+          <a (click)="onLogout()">Logout</a>
+        </div>
+      </div>
+
+      </li>
+
+      <li style="margin-left: 10px; margin-top: 6px;">
+        <a routerLink="/adminlogin" class="hello" href="#">Admin</a>
+      </li>
+
+      </ul>
+</div>
+
+
+</form>
+
+
+</nav>
+
+</div>
